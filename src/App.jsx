@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import PokemonPage from './pages/PokemonPage'
+import Error from './pages/Error'
 
 function App() {
 
@@ -20,10 +22,11 @@ function App() {
           <Routes>
 
             <Route path={"/"} element={ <Home />}/>
-
-
+            {/* Donde se van a ver los pokemon, con su parámetro dinámico */}
+            <Route path={"pokemon-details/:pokeName"} element={ <PokemonPage /> }/>
 
             {/* error handling routes */}
+            <Route path={"/error"} element={ <Error /> } />
             <Route path={"*"} element={ <NotFound />}/>
 
           </Routes>
